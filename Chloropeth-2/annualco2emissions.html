@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Historical CO2 Emissions By Country</title>
+    <meta charset="UTF-8">
+    <title>MCS DS - CS 498 Data Visualization Week 7 Assigment</title>
+    <style>
+        .names {
+            fill: none;
+            stroke: rgba(0, 0, 0, 0.98);
+            stroke-linejoin: round;
+        }
+
+        /* Tooltip CSS */
+        .d3-tip {
+            line-height: 1.5;
+            font-weight: 400;
+            font-family:"avenir next", Arial, sans-serif;
+            padding: 6px;
+            background: rgb(0, 0, 0);
+            color: rgba(255, 255, 255, 0.98);
+            border-radius: 1px;
+            pointer-events: none;
+        }
+
+        /* Creates a small triangle extender for the tooltip */
+        .d3-tip:after {
+            box-sizing: border-box;
+            display: inline;
+            font-size: 8px;
+            width: 100%;
+            line-height: 1.5;
+            color: rgb(0, 0, 0);
+            position: absolute;
+            pointer-events: none;
+
+        }
+
+        /* Northward tooltips */
+        .d3-tip.n:after {
+            content: "\25BC";
+            margin: -1px 0 0 0;
+            top: 100%;
+            left: 0;
+            text-align: center;
+        }
+
+        /* Eastward tooltips */
+        .d3-tip.e:after {
+            content: "\25C0";
+            margin: -4px 0 0 0;
+            top: 50%;
+            left: -8px;
+        }
+
+        /* Southward tooltips */
+        .d3-tip.s:after {
+            content: "\25B2";
+            margin: 0 0 1px 0;
+            top: -8px;
+            left: 0;
+            text-align: center;
+        }
+
+        /* Westward tooltips */
+        .d3-tip.w:after {
+            content: "\25B6";
+            margin: -4px 0 0 -1px;
+            top: 50%;
+            left: 100%;
+        }
+
+        /*    text{
+              pointer-events:none;
+            }*/
+
+        .details {
+            color: white;
+        }
+
+        /* Legend Font Style */
+        body {
+            font: 11px sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Legend Position Style */
+        .legend {
+            position:absolute;
+            /*left:20px;*/
+            /*top:30px;*/
+            top: 14%;
+            margin-left: 90%;
+        }
+
+        .axis text {
+            font: 10px sans-serif;
+        }
+
+        .axis line, .axis path {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .slidecontainer {
+            margin-top: 57em;
+            position: fixed;
+            margin-left: 40em;
+            width: 50%;
+        }
+
+        .slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 25px;
+            background: lightgrey;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+
+        .slider:hover {
+            opacity: 1;
+        }
+
+        .slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 27px;
+            background: navy;
+            border-style: solid;
+            border-color: navy;
+            cursor: pointer;
+        }
+
+        .slider::-moz-range-thumb {
+            width: 25px;
+            height: 25px;
+            background: #4CAF50;
+            cursor: pointer;
+        }
+    </style>
+    <script src="http://d3js.org/d3.v4.min.js"></script>
+    <script src="http://d3js.org/queue.v1.min.js"></script>
+    <script src="http://d3js.org/topojson.v1.min.js"></script>
+    <script src="d3-tip.js"></script>
+</head>
+<body>
+<!-- Add a slider -->
+<h1 style="text-align: center;"> Trend of Annual CO2 emissions by Country</h1>
+<h2 style="text-align: center;"> <span id="chosenYear">  </span>  </h2>
+<div class="slidecontainer">
+    <span>1757</span><span> 2017 </span>
+    <input type="range" min="1757" max="2017" value="50" class="slider" name="mySlider" id="mySlider">
+
+</div>
+<!--
+
+<span> 1757 </span>
+<input type="range" name="mySlider" id="mySlider1" min="1757" max="2017" value="50">
+<span> 2017 </span>
+<span id="chosenYear1">  </span>
+-->
+<!-- Create a div where the graph will take place -->
+<div id="co2em"></div>
+
+<script>
+    d3.select("#chosenYear").text("Year -- " + 1757);
+    var format = d3.format(",");
+    var lowColor = 'lightgreen'
+    var midColor = "orange"
+    var highColor = 'red'
+    var minVal = 0
+    var midVal = 14
+    var maxVal = 28
+    // Set tooltips
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(function (d) {
+            // console.log("d is" , JSON.stringify(d));
+            return "<strong>Country: </strong><span class='details'>" + d.properties.name + "<br></span>" +
+                "<strong>Total CO2emissions: </strong><span class='details'>" + format(d.CO2emissions) + "</span>";
+        });
+    var margin = {top: -70, right: -100, bottom: 0, left: -50},
+        width = 1560 - margin.left - margin.right,
+        height = 500 - margin.top - margin.bottom;
+    var ramp = d3.scaleQuantize().domain([minVal,midVal,maxVal]).range([lowColor,midColor,highColor]);
+    var path = d3.geoPath();
+    var svg = d3.select("#co2em")
+        .append("svg")
+        .attr("width", width)
+        .attr("height", height)
+        .append('g')
+        .attr('class', 'map');
+    var projection = d3.geoMercator()
+        .scale(130)
+        .translate( [width / 2, height / 1.5]);
+    var path = d3.geoPath().projection(projection);
+    svg.call(tip);
+    var allCO2Data = {};
+    var allWorldJson = {};
+    var selectedValue = "1757";
+    queue()
+        .defer(d3.json, "world-countries.json")
+        .defer(d3.csv, "annual-share-of-co2-emissions.csv")
+        .await(ready);
+    function ready (error, data, historicalCO2) {
+        /** Global data storage **/
+        allCO2Data = historicalCO2;
+        allWorldJson = data;
+        updateChart(allCO2Data, allWorldJson, selectedValue);
+    }
+    var yearValue = 1757;
+    var inter = setInterval(function() {
+        d3.select("#chosenYear").text("Year -- " + yearValue);
+        updateChart(allCO2Data,allWorldJson, yearValue);
+        yearValue = yearValue + 10;
+        if (yearValue > 2017) {
+            clearInterval(inter);
+        }
+    }, 1200);
+
+    function updateChart(allCO2Data, data, sliderValue) {
+        var emissionByCountry = {};
+        allCO2Data.forEach( function(d) {
+            if (!sliderValue ==  ' ') {
+                if (d.Year == sliderValue) {
+                    emissionByCountry[d.Code] = +d.CO2emissions;
+                }
+            }
+        });
+        console.log("emissionByCountry" ,  JSON.stringify(emissionByCountry));
+        data.features.forEach(function(d) { d.CO2emissions = emissionByCountry[d.id];});
+        // console.log("d.CO2emissions2" , JSON.stringify(d));
+        console.log("emissionByCountry" ,  JSON.stringify(emissionByCountry));
+
+        maxPop = 28;
+        minPop = 0;
+
+        svg.append("g")
+            .attr("class", "countries")
+            .selectAll("path")
+            .data(data.features)
+            .enter().append("path")
+            .attr("d", path)
+            .style("fill", function(d) {
+                console.log("isNaN((d.CO2emissions))", (isNaN(d.CO2emissions)));
+                if (isNaN((d.CO2emissions))) {
+                    return "lightgrey";
+                } else {
+                    return ramp(d.CO2emissions);
+                }
+            })
+            .style('stroke', 'white')
+            .style('stroke-width', 1.5)
+            .style("opacity",0.8)
+            // tooltips
+            .style("stroke","white")
+            .style('stroke-width', 0.3)
+            .on('mouseover',function(d){
+                tip.show(d);
+
+                d3.select(this)
+                    .style("opacity", 1)
+                    .style("stroke","white")
+                    .style("stroke-width",3);
+            })
+            .on('mouseout', function(d){
+                tip.hide(d);
+
+                d3.select(this)
+                    .style("opacity", 0.8)
+                    .style("stroke","white")
+                    .style("stroke-width",0.3);
+            });
+
+        svg.append("path")
+            .datum(topojson.mesh(data.features, function(a, b) { return a.id !== b.id; }))
+            // .datum(topojson.mesh(data.features, function(a, b) { return a !== b; }))
+            .attr("class", "names")
+            .attr("d", path);
+
+        // add a legend
+        var w = 130, h = 500;
+
+        var key = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h)
+            .attr("class", "legend");
+
+        var legend = key.append("defs")
+            .append("svg:linearGradient")
+            .attr("id", "gradient")
+            .attr("x1", "100%")
+            .attr("y1", "0%")
+            .attr("x2", "100%")
+            .attr("y2", "100%")
+            .attr("spreadMethod", "pad");
+
+        legend.append("stop")
+            .attr("offset", "0%")
+            .attr("stop-color", highColor)
+            .attr("stop-opacity", 1);
+
+        legend.append("stop")
+            .attr("offset", "100%")
+            .attr("stop-color", lowColor)
+            .attr("stop-opacity", 1);
+
+        key.append("rect")
+            .attr("width", w - 100)
+            .attr("height", h)
+            .style("fill", "url(#gradient)")
+            .attr("transform", "translate(0,10)");
+
+        var y = d3.scaleLinear()
+            .range([h, 0])
+            .domain([minVal, maxVal]);
+
+        var yAxis = d3.axisRight(y);
+
+        key.append("g")
+            .attr("class", "y axis")
+            .attr("transform", "translate(41,10)")
+            .call(yAxis)
+    }
+    // Listen to the slider?
+    d3.select("#mySlider").on("change", function(d){
+        d3.select("#chosenYear").text("Year -- " + this.value);
+        console.log("selected valued" , this.value);
+        selectedValue = this.value;
+        console.log("selected valued" , selectedValue);
+        updateChart(allCO2Data, allWorldJson, selectedValue)
+    })
+</script>
+</body>
+</html>

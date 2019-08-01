@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
+    <meta charset="UTF-8">
+    <title>Per Country CO2 Emissions</title>
+    <style>
+
+        body {
+            font: 12px Helvetica;
+        }
+
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+
+        .x.axis path {
+            display: none;
+        }
+
+        .line {
+            fill: none;
+            stroke: steelblue;
+            stroke-width: 2px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="countryList" style="display:none">
+    <select name="inptProduct" class="selectpicker" multiple data-live-search="true">
+    </select>
+    <button id="apply" type="button" class="btn btn-info btn-sm" style="margin-left: 71em;position: absolute;margin-top: 6em;">
+        <span class="glyphicon glyphicon-ok"></span>
+        <span> Save </span>
+    </button>
+</div>
+<button id="addCountry" type="button" class="btn btn-info btn-sm" style="margin-left: 71em;position: absolute;margin-top: 6em;">
+    <span class="glyphicon glyphicon-plus-sign"></span>
+    <span> Add Country </span>
+</button>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script>
+
+    var margin = {top: 120, right: 150, bottom: 30, left: 50},
+        width = 1030 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
+
+    var parseDate = d3.time.format("%Y").parse;
+
+    var x = d3.time.scale()
+        .range([0, width])
+        .domain([1751, 2017]);
+
+    var y = d3.scale.linear()
+        .range([height, 0])
+        .domain([0, 55]);
+
+    var color = d3.scale.category10();
+
+    var svg = d3.select("body").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+    d3.tsv("airbus_data.tsv", function (error, data) {
+        console.log("data[0]", data[0]);
+        color.domain(d3.keys(data[0]).filter(function (key) {
+            return key !== "date";
+        }));
+
+        data.forEach(function (d) {
+            d.date = parseDate(d.date);
+        });
+
+        var companies = color.domain().map(function (name) {
+            return {
+                name: name,
+                values: data.map(function (d) {
+                    // console.log("+d[name]", +d[name]);
+                    return {date: d.date, price: +d[name]};
+                })
+            };
+        });
+        console.log("companies", companies);
+
+        console.log("d3.extent(data, function(d) { return d.date; })", d3.extent(data, function (d) {
+            return d.date;
+        }));
+
+        var yValues, tmpValues = [];
+
+        companies.forEach(function (d) {
+            d.values.map(function (x) {
+                tmpValues.push(x.price);
+            })
+        });
+        console.log("tmpValues", yValues);
+        //array of all y-values
+        tmpValues = d3.set(tmpValues).values();
+        //use a d3.set to eliminate duplicate values
+        tmpMinValue = Math.min.apply(null, tmpValues);
+        tmpMaxValue = Math.max.apply(null, tmpValues);
+        yMin = Math[tmpMinValue < 0 ? 'ceil' : 'floor'](tmpMinValue / 5) * 5;
+        yMax = Math[tmpMaxValue < 0 ? 'ceil' : 'floor'](tmpMaxValue / 5) * 5;
+        console.log("yMax", yMax, yMin);
+        x.domain(d3.extent(companies, function (d) {
+            return d.date;
+        }));
+        /* console.log("MAX", d3.max(d3.values(companies[0].values)));
+         console.log("MIN", d3.min(companies[1].values, function(v) { return v.price; }));*/
+        console.log("a", d3.max(companies, function (c) {
+            return d3.max(c.values, function (v) {
+                return v.price;
+            });
+        }));
+        console.log("b", d3.min(companies, function (c) {
+            return d3.min(c.values, function (v) {
+                return v.price;
+            });
+        }));
+        /* console.log("c", d3.max(companies, function(c) { return d3.min(c.values, function(v) { return v.price; }); }));
+         console.log("d",  d3.max(companies, function(c) { return d3.max(c.values, function(v) { return v.price; }); }));*/
+        y.domain([
+            d3.min(companies, function (c) {
+                return d3.min(c.values, function (v) {
+                    return v.price;
+                });
+            }),
+            d3.max(companies, function (c) {
+                return d3.max(c.values, function (v) {
+                    return v.price;
+                });
+            })
+        ]);
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            // .ticks(5)
+            .innerTickSize(15)
+            .outerTickSize(0)
+            .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .tickFormat(function (d) {
+                return d + "%";
+            })
+            .innerTickSize(15)
+            .outerTickSize(0)
+            .tickValues(yValues)
+            .orient("left");
+
+        var line = d3.svg.line()
+            .interpolate("basis")
+            .x(function (d) {
+                return x(d.date);
+            })
+            .y(function (d) {
+                return y(d.price);
+            });
+
+
+        svg.append("g")
+            .attr("class", "x axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(xAxis);
+
+        svg.append("g")
+            .attr("class", "y axis")
+            .call(yAxis);
+
+        svg.append("line")
+            .attr(
+                {
+                    "class": "horizontalGrid",
+                    "x1": 0,
+                    "x2": width,
+                    "y1": y(0),
+                    "y2": y(0),
+                    "fill": "none",
+                    "shape-rendering": "crispEdges",
+                    "stroke": "black",
+                    "stroke-width": "1px",
+                    "stroke-dasharray": ("3, 3")
+                });
+
+
+        var company = svg.selectAll(".company")
+            .data(companies)
+            .enter().append("g")
+            .attr("class", "company");
+
+        var path = svg.selectAll(".company").append("path")
+            .attr("class", "line")
+            .attr("d", function (d) {
+                return line(d.values);
+            })
+            .style("stroke", function (d) {
+                /*if (d.name == "USA") {
+                    return "cyan"
+                } else if (d.name == "India") {
+                    return "green"
+                } else if (d.name == "Russia") {
+                    // return "purple"
+                } else if (d.name == "China") {
+                    return "blue"
+                }
+                else {return "#000";}*/
+                return color(d.name);
+            });
+
+        var legend = svg.selectAll(".company")
+            .append('g')
+            .attr('class', 'legend');
+
+        //var totalLength = path.node().getTotalLength();
+        /* console.log(path);
+         console.log(path[0].length);
+         console.log(path.node());
+         console.log(path[0][0]);
+         console.log(path[0][1]);*/
+        var totalLength = [path[0][0].getTotalLength(), path[0][1].getTotalLength()];
+        for (var i = 0; i < path[0].length; i++) {
+            // console.log("path[i]", path[0][i]);
+            var totalLength = path[0][i].getTotalLength();
+            d3.select(path[0][i])
+                .attr("stroke-dasharray", totalLength + " " + totalLength)
+                .attr("stroke-dashoffset", totalLength)
+                .transition()
+                .duration(5000)
+                .ease("linear")
+                .attr("stroke-dashoffset", 0);
+        }
+        /*d3.select(path[0][0])
+            .attr("stroke-dasharray", totalLength[0] + " " + totalLength[0] )
+            .attr("stroke-dashoffset", totalLength[0])
+            .transition()
+            .duration(5000)
+            .ease("linear")
+            .attr("stroke-dashoffset", 0);
+
+        d3.select(path[0][1])
+            .attr("stroke-dasharray", totalLength[1] + " " + totalLength[1] )
+            .attr("stroke-dashoffset", totalLength[1])
+            .transition()
+            .duration(5000)
+            .ease("linear")
+            .attr("stroke-dashoffset", 0);*/
+
+        /*legend.append("path")
+            .attr("class", "line")
+            .attr("d", function(d) { console.log("d", d); return line(d.values); })
+            .style("stroke", function(d) { return color(d.name); });*/
+
+        legend.append('rect')
+            .attr('x', width - 20)
+            .attr('y', function (d, i) {
+                return i * 20;
+            })
+            .attr('width', 10)
+            .attr('height', 10)
+            .style('fill', function (d) {
+                return color(d.name);
+            });
+
+        legend.append('text')
+            .attr('x', width - 8)
+            .attr('y', function (d, i) {
+                return (i * 20) + 9;
+            })
+            .text(function (d) {
+                return d.name;
+            });
+
+        var optionsAsString = "";
+        for(var i = 0; i < companies.length; i++) {
+            optionsAsString += "<option value='" + companies[i].name + "'>" + companies[i].name + "</option>";
+        }
+        $( 'select[name="inptProduct"]' ).append( optionsAsString );
+        $("#addCountry").click(function(){
+            $("#countryList").show();
+        });
+
+    });
+
+</script>
+</body>
+</html>

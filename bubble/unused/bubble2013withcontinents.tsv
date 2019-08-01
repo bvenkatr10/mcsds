@@ -1,0 +1,135 @@
+Code	continent	Country	Entity	Year	p	pop	s
+AFG	Asia	Afghanistan	Afghanistan	2013	0	"34,499,915"	0
+AGO	Africa	Angola	Angola	2013	"6,211.80"	"20,714,494"	0
+ALB	Europe	Albania	Albania	2013	"9,319.47"	"3,238,316"	0
+ARG	Americas	Argentina	Argentina	2013	"22,695.24"	"41,473,982"	0.8
+AUS	Oceania	Australia	Australia	2013	"63,548.56"	"23,213,944"	0
+AUT	Europe	Austria	Austria	2013	"45,578.49"	"8,441,263"	0.2
+BDI	Africa	Burundi	Burundi	2013	0	"8,911,183"	71.7
+BEL	Europe	Belgium	Belgium	2013	"57,998.83"	"10,815,599"	0.2
+BEN	Africa	Benin	Benin	2013	"4,724.73"	"9,606,534"	0
+BFA	Africa	Burkina Faso	Burkina Faso	2013	0	"18,011,507"	0
+BGD	Asia	Bangladesh	Bangladesh	2013	"2,503.74"	"154,393,847"	0
+BGR	Europe	Bulgaria	Bulgaria	2013	"27,087.70"	"7,349,462"	1.7
+BHR	Asia	Bahrain	Bahrain	2013	"121,147.27"	"1,377,273"	0
+BIH	Europe	Bosnia and Herzegovina	Bosnia and Herzegovina	2013	"20,821.11"	"3,735,880"	0
+BOL	Americas	Bolivia	Bolivia	2013	"8,725.80"	"10,409,761"	6.9
+BRA	Americas	Brazil	Brazil	2013	"16,877.08"	"200,050,487"	3.8
+BWA	Africa	Botswana	Botswana	2013	"13,560.92"	"2,074,616"	0
+CAF	Africa	Central African Republic	Central African Republic	2013	0	"4,666,833"	0
+CAN	Americas	Canada	Canada	2013	"89,881.69"	"34,993,747"	0.5
+CHE	Europe	Switzerland	Switzerland	2013	"38,426.86"	"7,761,820"	0
+CHL	Americas	Chile	Chile	2013	"25,769.76"	"17,574,464"	0.9
+CHN	Asia	China	China	2013	"25,746.02"	"1,359,368,470"	1.9
+CIV	Africa	Cote d'Ivoire	Cote d'Ivoire	2013	"7,163.25"	"21,057,316"	0
+CMR	Africa	Cameroon	Cameroon	2013	"3,907.72"	"20,913,595"	0
+COL	Americas	Colombia	Colombia	2013	"8,267.28"	"48,165,221"	5.7
+COM	Africa	Comoros	Comoros	2013	0	"792,913"	18.1
+CRI	Americas	Costa Rica	Costa Rica	2013	"11,967.39"	"4,859,957"	1.6
+CUB	Americas	Cuba	Cuba	2013	"11,752.89"	"11,244,424"	0
+CZE	Europe	Czech Republic	Czech Republic	2013	"46,403.60"	"10,589,806"	0
+DEU	Europe	Germany	Germany	2013	"45,816.73"	"81,804,228"	0
+DJI	Africa	Djibouti	Djibouti	2013	0	"940,090"	22.5
+DNK	Europe	Denmark	Denmark	2013	"36,347.68"	"5,611,187"	0.2
+DOM	Americas	Dominican Republic	Dominican Republic	2013	"8,634.95"	"10,308,609"	2.4
+DZA	Africa	Algeria	Algeria	2013	"14,433.28"	"36,983,924"	0
+ECU	Americas	Ecuador	Ecuador	2013	"9,844.25"	"15,061,398"	3.2
+EGY	Africa	Egypt	Egypt	2013	"9,715.39"	"85,378,440"	0
+ERI	Africa	Eritrea	Eritrea	2013	0	"5,748,304"	0
+ESP	Europe	Spain	Spain	2013	"29,215.79"	"47,042,602"	1.2
+ETH	Africa	Ethiopia	Ethiopia	2013	"5,753.69"	"88,356,373"	0
+FIN	Europe	Finland	Finland	2013	"71,131.72"	"5,418,763"	0
+FRA	Europe	France	France	2013	"44,584.02"	"63,782,963"	0
+GAB	Africa	Gabon	Gabon	2013	"33,884.50"	"1,594,205"	0
+GBR	Europe	United Kingdom	United Kingdom	2013	"34,746.98"	"63,177,406"	0.2
+GHA	Africa	Ghana	Ghana	2013	"3,951.95"	"26,131,336"	0
+GIN	Africa	Guinea	Guinea	2013	0	"10,753,680"	0
+GMB	Africa	Gambia	Gambia	2013	0	"1,874,360"	0
+GNB	Africa	Guinea-Bissau	Guinea-Bissau	2013	0	"1,612,913"	0
+GNQ	Africa	Equatorial Guinea	Equatorial Guinea	2013	0	"761,050"	0
+GRC	Europe	Greece	Greece	2013	"24,748.76"	"11,445,691"	1
+GTM	Americas	Guatemala	Guatemala	2013	"8,981.88"	"15,527,502"	0
+HND	Americas	Honduras	Honduras	2013	"6,984.48"	"8,071,522"	17.3
+HRV	Europe	Croatia	Croatia	2013	"23,072.38"	"4,378,806"	0.7
+HTI	Americas	Haiti	Haiti	2013	"4,568.83"	"10,388,424"	0
+HUN	Europe	Hungary	Hungary	2013	"26,422.75"	"9,933,795"	0.2
+IDN	Asia	Indonesia	Indonesia	2013	"10,037.20"	"247,188,189"	9.4
+IND	Asia	India	India	2013	"7,057.95"	"1,275,137,828"	0
+IRL	Europe	Ireland	Ireland	2013	"32,738.25"	"4,631,391"	0.7
+IRN	Asia	Iran	Iran	2013	"33,186.64"	"76,407,013"	0.1
+IRQ	Asia	Iraq	Iraq	2013	"16,940.99"	"34,776,205"	0
+ISL	Europe	Iceland	Iceland	2013	"211,411.76"	"331,996"	0
+ISR	Asia	Israel	Israel	2013	"33,379.25"	"7,818,860"	0
+ITA	Europe	Italy	Italy	2013	"29,999.27"	"61,087,395"	1.4
+JAM	Americas	Jamaica	Jamaica	2013	"11,736.24"	"2,771,179"	0
+JOR	Asia	Jordan	Jordan	2013	"10,681.65"	"6,572,903"	0
+JPN	Asia	Japan	Japan	2013	"41,491.53"	"126,345,235"	0
+KEN	Africa	Kenya	Kenya	2013	"5,534.52"	"43,923,719"	0
+KHM	Asia	Cambodia	Cambodia	2013	"4,617.22"	"14,656,016"	0
+KWT	Asia	Kuwait	Kuwait	2013	"112,907.22"	"2,959,015"	0
+LBN	Asia	Lebanon	Lebanon	2013	"15,587.29"	"4,324,060"	0
+LBR	Africa	Liberia	Liberia	2013	0	"4,348,740"	0
+LBY	Africa	Libya	Libya	2013	"36,442.47"	"6,506,095"	0
+LKA	Asia	Sri Lanka	Sri Lanka	2013	"5,668.21"	"21,393,876"	0
+LSO	Africa	Lesotho	Lesotho	2013	0	"2,240,126"	0
+MAR	Africa	Morocco	Morocco	2013	"6,444.70"	"32,925,553"	1
+MDG	Africa	Madagascar	Madagascar	2013	0	"22,555,046"	0
+MEX	Americas	Mexico	Mexico	2013	"18,232.16"	"117,478,371"	0
+MLI	Africa	Mali	Mali	2013	0	"16,808,242"	0
+MMR	Asia	Myanmar	Myanmar	2013	"3,755.17"	"49,119,646"	0
+MNE	Europe	Montenegro	Montenegro	2013	"18,380.27"	"633,167"	1
+MNG	Asia	Mongolia	Mongolia	2013	"21,318.71"	"2,887,863"	0
+MOZ	Africa	Mozambique	Mozambique	2013	"4,809.40"	"25,028,313"	0
+MRT	Africa	Mauritania	Mauritania	2013	0	"3,704,414"	0
+MUS	Africa	Mauritius	Mauritius	2013	"12,731.66"	"1,320,785"	0
+MWI	Africa	Malawi	Malawi	2013	0	"16,406,945"	0
+MYS	Asia	Malaysia	Malaysia	2013	"34,375.86"	"29,787,203"	0
+NAM	Africa	Namibia	Namibia	2013	"8,719.52"	"2,404,477"	0
+NER	Africa	Niger	Niger	2013	"1,809.97"	"17,239,826"	0
+NGA	Africa	Nigeria	Nigeria	2013	"9,069.67"	"170,901,148"	0
+NIC	Americas	Nicaragua	Nicaragua	2013	"6,883.56"	"6,041,763"	0
+NLD	Europe	Netherlands	Netherlands	2013	"53,500.13"	"16,761,552"	0
+NOR	Europe	Norway	Norway	2013	"74,617.97"	"4,991,997"	0
+NPL	Asia	Nepal	Nepal	2013	"4,667.95"	"31,535,507"	0
+NZL	Oceania	New Zealand	New Zealand	2013	"50,710.36"	"4,508,166"	0
+OMN	Asia	Oman	Oman	2013	"76,565.68"	"2,957,333"	0
+PAK	Asia	Pakistan	Pakistan	2013	"5,680.41"	"183,188,847"	6.1
+PAN	Americas	Panama	Panama	2013	"12,034.29"	"3,678,264"	2.8
+PER	Americas	Peru	Peru	2013	"7,750.61"	"30,075,185"	4.3
+PHL	Asia	Philippines	Philippines	2013	"5,289.98"	"98,112,780"	0
+POL	Europe	Poland	Poland	2013	"29,838.75"	"38,331,803"	0
+PRI	Americas	Puerto Rico	Puerto Rico	2013	0	"3,742,334"	0
+PRT	Europe	Portugal	Portugal	2013	"23,932.93"	"10,704,534"	0.7
+PRY	Americas	Paraguay	Paraguay	2013	"8,886.82"	"6,798,236"	1.8
+REU	Africa	Reunion	Reunion	2013	0	"874,944"	0
+ROU	Europe	Romania	Romania	2013	"18,561.36"	"21,338,815"	7.2
+RWA	Africa	Rwanda	Rwanda	2013	0	"11,608,439"	56
+SAU	Asia	Saudi Arabia	Saudi Arabia	2013	"74,640.38"	"29,319,402"	0
+SDN	Africa	Sudan	Sudan	2013	"4,417.38"	"35,940,905"	0
+SEN	Africa	Senegal	Senegal	2013	"3,057.13"	"13,454,191"	0
+SGP	Asia	Singapore	Singapore	2013	"56,759.12"	"5,300,914"	0
+SLE	Africa	Sierra Leone	Sierra Leone	2013	0	"6,255,163"	0
+SLV	Americas	El Salvador	El Salvador	2013	"7,421.46"	"6,302,723"	3.2
+SOM	Africa	Somalia	Somalia	2013	0	"10,052,842"	0
+SRB	Europe	Serbia	Serbia	2013	"24,201.71"	"9,835,010"	0
+STP	Africa	Sao Tome and Principe	Sao Tome and Principe	2013	0	"175,383"	0
+SVN	Europe	Slovenia	Slovenia	2013	"38,739.41"	"2,044,766"	0
+SWE	Europe	Sweden	Sweden	2013	"59,854.19"	"9,545,823"	0.7
+SWZ	Africa	Swaziland	Swaziland	2013	0	"1,237,166"	0
+SYR	Asia	Syria	Syria	2013	0	"21,468,962"	0
+TCD	Africa	Chad	Chad	2013	0	"12,141,876"	0
+TGO	Africa	Togo	Togo	2013	"5,295.47"	"6,412,560"	0
+THA	Asia	Thailand	Thailand	2013	"23,162.72"	"70,243,267"	0
+TTO	Americas	Trinidad and Tobago	Trinidad and Tobago	2013	"169,070.94"	"1,355,342"	0
+TUN	Africa	Tunisia	Tunisia	2013	"10,994.50"	"10,813,680"	0
+TUR	Europe	Turkey	Turkey	2013	"17,944.72"	"75,359,032"	0.3
+TWN	Asia	Taiwan	Taiwan	2013	0	"23,151,000"	0
+TZA	Africa	Tanzania	Tanzania	2013	"5,516.71"	"49,153,002"	0
+UGA	Africa	Uganda	Uganda	2013	0	"36,759,274"	0
+URY	Americas	Uruguay	Uruguay	2013	"15,705.55"	"3,403,117"	0.2
+USA	Americas	United States	United States	2013	"80,267.78"	"318,497,630"	1
+VEN	Americas	Venezuela	Venezuela	2013	"26,377.49"	"30,340,637"	0
+VNM	Asia	Vietnam	Vietnam	2013	"7,617.22"	"90,656,550"	0
+ZAF	Africa	South Africa	South Africa	2013	"30,225.90"	"50,981,076"	0
+ZMB	Africa	Zambia	Zambia	2013	"7,388.88"	"14,314,515"	0
+ZWE	Africa	Zimbabwe	Zimbabwe	2013	"8,718.63"	"13,327,925"	0

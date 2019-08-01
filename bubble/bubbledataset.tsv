@@ -1,0 +1,213 @@
+continet	country	energyuse	pop	povertyshare
+Africa	Algeria	15364.39	33333216	0.00
+Africa	Angola	6338.82	12420476	0.00
+Africa	Benin	4847.33	8078314	0.00
+Africa	Botswana	14568.67	1639131	0.00
+Africa	Burkina Faso	0.00	14326203	43.70
+Africa	Cameroon	3975.86	17696293	23.80
+Africa	Cote d'Ivoire	7161.79	18013409	0.00
+Africa	Egypt	9478.31	80264543	0.00
+Africa	Ethiopia	5777.95	76511887	0.00
+Africa	Gabon	31468.73	1454867	0.00
+Africa	Ghana	3896.64	22873338	0.00
+Africa	Kenya	5971.15	35610177	0.00
+Africa	Liberia	0.00	3193942	38.60
+Africa	Libya	33496.07	6036914	0.00
+Africa	Mauritania	0.00	3270065	6.00
+Africa	Mauritius	12925.84	1250882	0.00
+Africa	Morocco	6432.60	33757175	0.00
+Africa	Mozambique	4972.97	19951656	62.90
+Africa	Namibia	8857.58	2055080	0.00
+Africa	Niger	1753.04	12894865	44.50
+Africa	Nigeria	8878.24	135031164	0.00
+Africa	Senegal	3164.31	12267493	0.00
+Africa	South Africa	31351.38	43997828	18.90
+Africa	Sudan	4429.56	42292929	0.00
+Africa	Tanzania	5529.22	38139640	0.00
+Africa	Togo	5311.12	5701579	0.00
+Africa	Tunisia	10974.15	10276158	0.00
+Americas	Argentina	23436.63	40301927	0.70
+Americas	Bolivia	9173.79	9119152	5.80
+Americas	Brazil	17269.70	190010647	2.80
+Americas	Canada	91598.97	33390141	0.00
+Americas	Chile	23837.88	16284741	0.00
+Americas	Colombia	8275.71	44227550	5.00
+Americas	Costa Rica	11992.18	4133884	1.40
+Americas	Cuba	11893.64	11416987	0.00
+Americas	Dominican Republic	8541.16	9319622	2.30
+Americas	Ecuador	10370.34	13755680	2.60
+Americas	El Salvador	7528.21	6939688	3.00
+Americas	Guatemala	9654.00	12572928	8.70
+Americas	Haiti	4568.28	8502814	0.00
+Americas	Honduras	7069.47	7483763	15.90
+Americas	Jamaica	11412.66	2780132	0.00
+Americas	Mexico	17599.20	108700891	4.10
+Americas	Nicaragua	7082.75	5675356	3.20
+Americas	Panama	12550.28	3242173	3.50
+Americas	Paraguay	9172.46	6667147	2.40
+Americas	Peru	8928.23	28674757	3.70
+Americas	Trinidad and Tobago	168015.70	1056608	0.00
+Americas	United States	80892.74	301139947	0.00
+Americas	Uruguay	16029.32	3447496	0.10
+Asia	Bahrain	123208.19	708573	0.00
+Asia	Bangladesh	2584.43	150448339	0.00
+Asia	Cambodia	4849.01	14131858	0.00
+Asia	China	26013.17	1318683096	1.40
+Asia	India	7413.29	1110396331	0.00
+Asia	Indonesia	10279.88	223547000	7.90
+Asia	Iran	35163.19	69453570	0.20
+Asia	Iraq	16438.96	27499638	0.00
+Asia	Israel	32127.94	6426679	0.00
+Asia	Japan	40364.98	127467972	0.00
+Asia	Jordan	10798.69	6053193	0.00
+Asia	Kuwait	104167.82	2505559	0.00
+Asia	Lebanon	15553.57	3921278	0.00
+Asia	Malaysia	34512.51	24821286	0.00
+Asia	Mongolia	21378.72	2874127	0.20
+Asia	Myanmar	4324.84	47761980	0.00
+Asia	Nepal	4799.99	28901790	0.00
+Asia	Oman	71428.82	3204897	0.00
+Asia	Pakistan	5634.10	169270617	0.00
+Asia	Philippines	5538.73	91077287	0.00
+Asia	Saudi Arabia	80679.99	27601038	0.00
+Asia	Singapore	59566.58	4553009	0.00
+Asia	Sri Lanka	5997.41	20378239	0.00
+Asia	Thailand	22906.84	65068149	0.00
+Asia	Vietnam	0.00	85262356	2.60
+Europe	Albania	9402.34	3600523	0.00
+Europe	Austria	43767.50	8199783	0.20
+Europe	Belgium	54756.61	10392226	0.00
+Europe	Bosnia and Herzegovina	25516.87	4552198	0.00
+Europe	Bulgaria	28815.13	7322858	1.50
+Europe	Croatia	22071.89	4493312	1.00
+Europe	Czech Republic	45532.77	10228744	0.00
+Europe	Denmark	33408.03	5468120	0.20
+Europe	Finland	72261.35	5238460	0.00
+Europe	France	42552.61	61083916	0.00
+Europe	Germany	43955.14	82400996	0.00
+Europe	Greece	24700.93	10706290	1.50
+Europe	Hungary	26917.59	9956108	0.70
+Europe	Iceland	208364.48	301931	0.00
+Europe	Ireland	31884.52	4109086	0.50
+Europe	Italy	28080.45	58147733	1.20
+Europe	Montenegro	17890.01	684736	0.00
+Europe	Netherlands	50305.84	16570613	0.00
+Europe	Norway	65077.46	4627926	0.00
+Europe	Poland	28765.72	38518241	0.00
+Europe	Portugal	23661.38	10642836	0.50
+Europe	Romania	18511.09	22276056	7.50
+Europe	Serbia	21625.16	10150265	0.00
+Europe	Slovenia	37637.43	2009245	0.00
+Europe	Spain	28663.78	40448191	0.70
+Europe	Sweden	57759.65	9031088	0.50
+Europe	Switzerland	35587.06	7554661	0.00
+Europe	Turkey	18350.14	71158647	0.30
+Europe	United Kingdom	32294.70	60776238	0.20
+Oceania	Australia	61967.25	20434176	0.00
+Oceania	New Zealand	53031.55	4115771	0.00
+Africa	Algeria		33333216	0.00
+Africa	Angola		12420476	0.00
+Africa	Benin		8078314	0.00
+Africa	Botswana		1639131	0.00
+Africa	Burkina Faso		14326203	43.70
+Africa	Cameroon		17696293	23.80
+Africa	Cote d'Ivoire		18013409	0.00
+Africa	Egypt		80264543	0.00
+Africa	Ethiopia		76511887	0.00
+Africa	Gabon		1454867	0.00
+Africa	Ghana		22873338	0.00
+Africa	Kenya		35610177	0.00
+Africa	Liberia		3193942	38.60
+Africa	Libya		6036914	0.00
+Africa	Mauritania		3270065	6.00
+Africa	Mauritius		1250882	0.00
+Africa	Morocco		33757175	0.00
+Africa	Mozambique		19951656	62.90
+Africa	Namibia		2055080	0.00
+Africa	Niger		12894865	44.50
+Africa	Nigeria		135031164	0.00
+Africa	Senegal		12267493	0.00
+Africa	South Africa		43997828	18.90
+Africa	Sudan		42292929	0.00
+Africa	Tanzania		38139640	0.00
+Africa	Togo		5701579	0.00
+Africa	Tunisia		10276158	0.00
+Americas	Argentina		40301927	0.70
+Americas	Bolivia		9119152	5.80
+Americas	Brazil		190010647	2.80
+Americas	Canada		33390141	0.00
+Americas	Chile		16284741	0.00
+Americas	Colombia		44227550	5.00
+Americas	Costa Rica		4133884	1.40
+Americas	Cuba		11416987	0.00
+Americas	Dominican Republic		9319622	2.30
+Americas	Ecuador		13755680	2.60
+Americas	El Salvador		6939688	3.00
+Americas	Guatemala		12572928	8.70
+Americas	Haiti		8502814	0.00
+Americas	Honduras		7483763	15.90
+Americas	Jamaica		2780132	0.00
+Americas	Mexico		108700891	4.10
+Americas	Nicaragua		5675356	3.20
+Americas	Panama		3242173	3.50
+Americas	Paraguay		6667147	2.40
+Americas	Peru		28674757	3.70
+Americas	Trinidad and Tobago		1056608	0.00
+Americas	United States		301139947	0.00
+Americas	Uruguay		3447496	0.10
+Asia	Bahrain		708573	0.00
+Asia	Bangladesh		150448339	0.00
+Asia	Cambodia		14131858	0.00
+Asia	China		1318683096	1.40
+Asia	India		1110396331	0.00
+Asia	Indonesia		223547000	7.90
+Asia	Iran		69453570	0.20
+Asia	Iraq		27499638	0.00
+Asia	Israel		6426679	0.00
+Asia	Japan		127467972	0.00
+Asia	Jordan		6053193	0.00
+Asia	Kuwait		2505559	0.00
+Asia	Lebanon		3921278	0.00
+Asia	Malaysia		24821286	0.00
+Asia	Mongolia		2874127	0.20
+Asia	Myanmar		47761980	0.00
+Asia	Nepal		28901790	0.00
+Asia	Oman		3204897	0.00
+Asia	Pakistan		169270617	0.00
+Asia	Philippines		91077287	0.00
+Asia	Saudi Arabia		27601038	0.00
+Asia	Singapore		4553009	0.00
+Asia	Sri Lanka		20378239	0.00
+Asia	Thailand		65068149	0.00
+Asia	Vietnam		85262356	2.60
+Europe	Albania		3600523	0.00
+Europe	Austria		8199783	0.20
+Europe	Belgium		10392226	0.00
+Europe	Bosnia and Herzegovina		4552198	0.00
+Europe	Bulgaria		7322858	1.50
+Europe	Croatia		4493312	1.00
+Europe	Czech Republic		10228744	0.00
+Europe	Denmark		5468120	0.20
+Europe	Finland		5238460	0.00
+Europe	France		61083916	0.00
+Europe	Germany		82400996	0.00
+Europe	Greece		10706290	1.50
+Europe	Hungary		9956108	0.70
+Europe	Iceland		301931	0.00
+Europe	Ireland		4109086	0.50
+Europe	Italy		58147733	1.20
+Europe	Montenegro		684736	0.00
+Europe	Netherlands		16570613	0.00
+Europe	Norway		4627926	0.00
+Europe	Poland		38518241	0.00
+Europe	Portugal		10642836	0.50
+Europe	Romania		22276056	7.50
+Europe	Serbia		10150265	0.00
+Europe	Slovenia		2009245	0.00
+Europe	Spain		40448191	0.70
+Europe	Sweden		9031088	0.50
+Europe	Switzerland		7554661	0.00
+Europe	Turkey		71158647	0.30
+Europe	United Kingdom		60776238	0.20
+Oceania	Australia		20434176	0.00
+Oceania	New Zealand		4115771	0.00
